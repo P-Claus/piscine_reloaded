@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 21:54:35 by pclaus            #+#    #+#             */
-/*   Updated: 2023/10/13 17:51:58 by pclaus           ###   ########.fr       */
+/*   Updated: 2023/10/13 17:53:36 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strdup(char *src)
 	*(dst + counter) = '\0';
 	return (dst);
 }
-
+/*
 #include <stdio.h>
 #include <string.h>
 int	main(void)
@@ -50,4 +50,4 @@ int	main(void)
 
 	printf("Using strdup:  %s\n", strdup(src));
 	printf("Using ft_strdup:  %s", ft_strdup(src));
-}
+}*/
