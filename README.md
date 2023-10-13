@@ -2,7 +2,7 @@
 ![piscine reloaded header](https://github.com/P-Claus/piscine_reloaded/blob/main/subject/piscine-reloaded.png)
 
 <p align='center'>
- 	<img alt="status" src="https://img.shields.io/badge/status-registered-success?color=071C13&style=flat-square"/>
+ 	<img alt="status" src="https://img.shields.io/badge/status-ongoing-success?color=071C13&style=flat-square"/>
   	<img alt="register date" src="https://img.shields.io/badge/registered-09%20%2F%2010%20%2F%202023-success?color=071C13&style=flat-square"/>
 
 	
