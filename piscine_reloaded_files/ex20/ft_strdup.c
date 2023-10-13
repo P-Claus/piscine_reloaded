@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 21:54:35 by pclaus            #+#    #+#             */
-/*   Updated: 2023/10/12 22:12:07 by pclaus           ###   ########.fr       */
+/*   Updated: 2023/10/13 17:06:58 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_strlen(char *str)
 {
-	int len;
+	int	len;
 
+	len = 0;
 	while (str[len] != '\0')
 		len++;
 	return (len);
@@ -23,27 +24,28 @@ int	ft_strlen(char *str)
 
 char	*ft_strdup(char *src)
 {
-	char	dst[];
-	int	counter;
-	int	*ptr;
+	int		len;
+	int		counter;
+	char	*dst;
 
-	ptr = (char*) malloc(ft_strlen(src) * sizeof(char));
+	len = ft_strlen(src);
 	counter = 0;
-	while (src[counter] != '\0')
+	dst = (char *) malloc(len * sizeof(char));
+	while (*(src + counter) != '\0')
 	{
-		src[counter] == dst[counter];
+		*(dst + counter) = *(src + counter);
 		counter++;
 	}
-	dst[counter] = '\0';
-	counter = 0;
-	return (dst[counter])
+	*(dst + counter) = '\0';
+	return (dst);
 }
-
+/*
 #include <stdio.h>
+#include <string.h>
 int	main(void)
 {
-	char src[];
+	char *src = "hello everybody";
 
-	src = "hello world";
-	printf("dst is:  %s", ft_strdup(src));
-}
+	printf("Using strdup:  %s\n", strdup(src));
+	printf("Using ft_strdup:  %s", ft_strdup(src));
+}*/
