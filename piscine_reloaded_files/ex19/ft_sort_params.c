@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 17:59:05 by pclaus            #+#    #+#             */
-/*   Updated: 2023/10/12 19:35:18 by pclaus           ###   ########.fr       */
+/*   Updated: 2023/10/12 21:46:49 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,11 @@ int	ft_strcmp(char *s1, char *s2)
 	int	index;
 
 	index = 0;
-	while (s1[index] != '\0' && s2[index] != '\0')
+	while (s1[index] != '\0' || s2[index] != '\0')
 	{
-		if (s1[index] == s2[index])
-			index++;
-		return (s1[index] - s2[index]);
+		if (s1[index] != s2[index])
+			return (s1[index] - s2[index]);
+		index++;
 	}
 	return (0);
 }
@@ -50,13 +50,13 @@ int	main(int argc, char *argv[])
 	int	y;
 
 	x = 1;
-	while (x < argc -1)
+	while (x < argc - 1)
 	{
 		y = 1;
 		while (y < argc -1)
 		{
-			if (ft_strcmp(argv[y], argv[y+ 1]) > 0)
-				ft_swap(&argv[y], &argv[y+1]);
+			if (ft_strcmp(argv[y], argv[y + 1]) > 0)
+				ft_swap(&argv[y], &argv[y + 1]);
 			y++;
 		}
 		x++;
