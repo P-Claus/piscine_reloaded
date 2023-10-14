@@ -6,7 +6,7 @@
 /*   By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 21:45:46 by pclaus            #+#    #+#             */
-/*   Updated: 2023/10/14 13:16:04 by pclaus           ###   ########.fr       */
+/*   Updated: 2023/10/14 22:07:12 by pclaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,3 @@ void	ft_putstr(char *s)
 	while (s[counter] != '\0')
 		ft_putchar(s[counter++]);
 }
-

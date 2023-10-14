@@ -6,38 +6,28 @@
 #    By: pclaus <pclaus@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/14 13:22:18 by pclaus            #+#    #+#              #
-#    Updated: 2023/10/14 14:41:28 by pclaus           ###   ########.fr        #
+#    Updated: 2023/10/14 21:58:06 by pclaus           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRCS_DIR = srcs
-OBJ_DIR = obj
-
-
 CFLAGS = -Wall -Werror -Wextra -I./includes
 
-SOURCES = $(wildcard $(SRCS_DIR)/*.c)
-OBJECTS = $(patsubst $(SRCS_DIR)/%.c, $(OBJ_DIR)/%.o, $(SOURCES))
+SOURCES = ./srcs/ft_putchar.c ./srcs/ft_putstr.c ./srcs/ft_strlen.c ./srcs/ft_strcmp.c ./srcs/ft_swap.c
+OBJ_FILES = ft_putchar.o ft_putstr.o ft_strcmp.o ft_strlen.o ft_swap.o
 
 all: $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRCS_DIR)/%.c
-	@mkdir -p $(OBJ_DIR)
-	cc $(CFLAGS) -c $< -o $@
-
-$(NAME): $(OBJECTS)
+$(NAME): 
 	echo "Making the library"
-	@ar rcs $(NAME) $(OBJECTS)
+	@cc $(CFLAGS) -c $(SOURCES)
+	@ar rcs $(NAME) $(OBJ_FILES)
 
 clean:
-	echo "Removing the object directory"
-	@rm -rf $(OBJ_DIR)
+	@rm -f $(OBJ_FILES)
 
-fclean:
-	clean
-	@rm $(NAME)
+fclean: clean
+	@rm -f $(NAME)
 
-re:
-	fclean all
+re: fclean all
